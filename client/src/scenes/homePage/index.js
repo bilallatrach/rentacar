@@ -384,7 +384,9 @@ const HomePage = () => {
         </Box>
       )}
 
-      {results.length > 0 && <ComparateurTable data={results} />}
+      {results.length > 0 && (
+        <ComparateurTable data={results.filter((r) => r.success === true)} />
+      )}
     </Box>
   );
 };
