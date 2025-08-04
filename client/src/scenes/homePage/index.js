@@ -24,6 +24,7 @@ const HomePage = () => {
   const fetchData = async (values) => {
     setLoading(true);
     setResults([]); // Reset results before fetching new data
+    setBestOffer(null); // Reset best offer
     try {
       const { data, error } = await apiService.postData(
         "/rent/getInformations",
