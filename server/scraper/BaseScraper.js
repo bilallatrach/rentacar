@@ -7,7 +7,10 @@ class BaseScraper {
 
   async initBrowser() {
     const puppeteer = await import("puppeteer");
-    this.browser = await puppeteer.launch({ headless: this.headless });
+    this.browser = await puppeteer.launch({
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      headless: this.headless,
+    });
 
     this.page = await this.browser.newPage();
   }
