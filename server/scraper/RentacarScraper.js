@@ -33,7 +33,7 @@ class RentacarScraper extends BaseScraper {
     try {
       const response = await axios.get("https://api.scrapfly.io/scrape", {
         params: {
-          key: "scp-live-5a282361788145baa37b4b2b77ca515f",
+          key: process.env.SCRAPFLY_API_KEY,
           url: url,
           render_js: true,
           wait_for_selector: ".AgencyOption_categoryOption__HUCRm",
